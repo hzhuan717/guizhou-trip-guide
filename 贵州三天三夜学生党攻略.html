@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>贵州三天三夜学生党攻略 | 黔灵山 · 黄果树 · 梵净山</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-dark:#1a5f3f;
+  --green:#2d8a5e;
+  --gold:#e8b951;
+  --red:#c0392b;
+  --orange:#e67e22;
+  --blue:#2980b9;
+  --purple:#8e44ad;
+  --bg:#f5f7fa;
+  --card:#ffffff;
+  --ink:#1a1a2e;
+  --ink-light:#5a5a6e;
+  --border:#e2e8f0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans SC',sans-serif;
+  font-weight:400;
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink);
+  background:var(--bg);
+}
+h1,h2,h3{font-family:'Noto Serif SC',serif;}
+/* ============ 1. 顶部紧急横幅 ============ */
+.banner{
+  position:sticky;top:0;z-index:100;
+  background:linear-gradient(90deg,#c0392b,#e74c3c);
+  color:#fff;font-weight:700;
+  text-align:center;
+  padding:0.7rem 1rem;
+  font-size:0.95rem;
+  box-shadow:0 4px 15px rgba(192,57,43,.3);
+}
+.banner .d{
+  display:inline-block;background:#fff;color:var(--red);
+  border-radius:4px;padding:2px 6px;font-weight:700;
+  font-size:0.9rem;
+}
+/* ============ 2. Hero ============ */
+.hero{
+  background:linear-gradient(135deg,#0f3d2e,#1a5f3f 55%,#2d8a5e);
+  position:relative;
+  text-align:center;
+  padding:3rem 1.5rem;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(135deg,#0f3d2e,#1a5f3f 55%,#2d8a5e);
+  background-size:30px 30px,100% 100%;
+}
+.hero h1{
+  color:#fff;font-size:2.8rem;font-weight:700;
+  text-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.hero .sub{
+  color:rgba(255,255,255,.9);
+  font-size:1.1rem;margin-top:0.8rem;font-weight:300;
+}
+.hero .tags{
+  display:flex;justify-content:center;gap:0.8rem;flex-wrap:wrap;
+  margin-top:1.6rem;
+}
+.hero .tag{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:50px;
+  padding:0.4rem 1rem;
+  color:#fff;font-size:0.9rem;
+}
+/* ============ 通用 Section ============ */
+section{padding:2.5rem 1.5rem;max-width:1080px;margin:0 auto;}
+.sec-t{
+  font-size:1.6rem;font-weight:700;color:var(--green-dark);
+  margin-bottom:0.4rem;
+}
+.sec-line{
+  height:2px;width:120px;
+  background:linear-gradient(90deg,#2d8a5e,transparent);
+  margin-bottom:1.5rem;
+}
+.card{
+  background:var(--card);
+  border-radius:16px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.06);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+}
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease-out,transform .6s ease-out;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+/* ============ 3. 时间线 ============ */
+.timeline{position:relative;margin-top:1rem;}
+.timeline::before{
+  content:"";position:absolute;top:0;bottom:0;left:50%;
+  width:3px;transform:translateX(-50%);
+  background:linear-gradient(180deg,#2d8a5e,#e8b951);
+}
+.tl-item{
+  position:relative;width:50%;
+  opacity:0;transform:translateY(30px);
+  transition:opacity .6s ease-out,transform .6s ease-out;
+}
+.tl-item.show{opacity:1;transform:translateY(0);}
+.tl-item:nth-child(odd){padding-right:2.5rem;text-align:left;}
+.tl-item:nth-child(even){padding-left:2.5rem;text-align:left;}
+.tl-item .dot{
+  position:absolute;top:1.4rem;width:14px;height:14px;border-radius:50%;
+  background:var(--green);border:3px solid #fff;
+  box-shadow:0 0 0 3px var(--green);
+  z-index:2;
+}
+.tl-item:nth-child(odd) .dot{right:-7px;}
+.tl-item:nth-child(even) .dot{left:-7px;}
+.day-card{padding:1.3rem 1.5rem;border-radius:16px;border-left:4px solid var(--green);}
+.day-title{font-size:1.2rem;font-weight:700;margin-bottom:0.6rem;}
+.day-title .bar{display:inline-block;border-radius:8px;padding:0.15rem 0.6rem;color:#fff;font-size:0.85rem;margin-right:0.4rem;}
+.trow{display:flex;gap:0.6rem;align-items:baseline;padding:0.18rem 0;}
+.trow b{color:var(--green-dark);min-width:3.2em;font-weight:700;font-size:0.9rem;flex-shrink:0;}
+.trow span{font-size:0.95rem;}
+.day-cost{margin-top:0.7rem;font-size:0.8rem;color:var(--ink-light);}
+.notice{
+  margin-top:0.9rem;background:#fff3e0;color:#e65100;
+  border-radius:8px;padding:0.5rem 1rem;font-size:0.88rem;
+}
+.notice.red{background:#fdecea;color:#c0392b;}
+.collapse-tip{font-size:0.85rem;color:#555;font-style:italic;}
+/* ============ 4. 费用表格 ============ */
+table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.06);background:#fff;}
+thead th{
+  background:linear-gradient(135deg,#1a5f3f,#2d8a5e);
+  color:#fff;padding:1rem 1.2rem;text-align:left;
+  font-weight:700;font-size:0.95rem;
+}
+tbody td{padding:0.75rem 1.2rem;border-top:1px solid var(--border);font-size:0.95rem;}
+tbody tr{transition:background .2s;}
+tbody tr:hover{background:#f8fafb;}
+.price-free{color:var(--green);font-weight:700;}
+.total-row{background:#fff9e6 !important;font-weight:700;}
+/* ============ 5. 高铁表格 ============ */
+.tbl-wrap{overflow-x:auto;}
+thead.dark th{background:linear-gradient(135deg,#2c3e50,#34495e);}
+.best-row{background:#e8f5e9 !important;}
+/* ============ 6. 预约攻略三卡片 ============ */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.book-card{border-top:4px solid var(--green);padding:1.3rem;border-radius:16px;}
+.book-card h3{font-size:1.1rem;margin-bottom:0.8rem;}
+.book-card p{font-size:0.9rem;margin-bottom:0.4rem;}
+.book-card p b{color:var(--green-dark);}
+.hot-red{color:var(--red);font-weight:700;}
+/* ============ 7. 路线步骤流 ============ */
+.route-card{padding:1.4rem;border-radius:16px;margin-bottom:1.2rem;}
+.route-card h3{font-size:1.15rem;margin-bottom:0.5rem;}
+.route-sub{font-size:0.88rem;color:var(--ink-light);margin-bottom:1rem;}
+.steps{list-style:none;}
+.steps li{display:flex;flex-direction:column;align-items:center;}
+.node{
+  width:100%;max-width:420px;
+  display:flex;align-items:center;gap:0.7rem;
+}
+.node .circ{
+  width:44px;height:44px;border-radius:50%;
+  color:#fff;font-weight:700;font-size:0.78rem;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;flex-shrink:0;line-height:1.2;
+}
+.node .nlabel{font-size:0.95rem;font-weight:500;}
+.node .ncost{font-size:0.8rem;color:var(--ink-light);}
+.steps .arrow{
+  display:block;margin:0.35rem 0;
+  color:var(--green);font-weight:700;font-size:1.3rem;line-height:1;
+}
+.route-tags{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;}
+.route-tags span{font-size:0.78rem;border-radius:50px;padding:0.2rem 0.7rem;background:var(--bg);color:var(--ink-light);}
+/* ============ 8. 避坑 ============ */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.pit{padding:1.3rem;border-radius:16px;border-left:4px solid var(--red);}
+.pit.red{border-color:var(--red);}
+.pit.orange{border-color:var(--orange);}
+.pit.green{border-color:var(--green);}
+.pit h4{font-size:1rem;margin-bottom:0.4rem;}
+.pit.red h4{color:var(--red);}
+.pit.orange h4{color:var(--orange);}
+.pit.green h4{color:var(--green);}
+.pit p{font-size:0.9rem;color:var(--ink-light);}
+/* ============ 9. 天气 ============ */
+.weather-card{
+  background:linear-gradient(135deg,#e3f2fd,#bbdefb);
+  border:1px solid #90caf9;border-radius:16px;
+  padding:1.5rem;
+}
+.weather-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;}
+.w-item{background:#fff;border-radius:12px;padding:1rem;text-align:center;}
+.w-item .temp{font-size:1.5rem;font-weight:700;color:var(--blue);}
+.w-item p{font-size:0.88rem;color:var(--ink-light);}
+.w-item .name{font-weight:500;color:var(--ink);display:block;margin-bottom:0.2rem;}
+/* ============ 10. 装备 ============ */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.pack{padding:1.2rem;border-radius:16px;}
+.pack h4{font-size:1rem;margin-bottom:0.6rem;}
+.pack ul{list-style:none;}
+.pack li{font-size:0.88rem;color:var(--ink-light);padding:0.25rem 0;position:relative;padding-left:1.1rem;}
+.pack li::before{content:"✓";color:var(--green);font-weight:700;position:absolute;left:0;}
+.pack li.must{color:var(--red);font-weight:700;}
+.pack li.must::before{color:var(--red);}
+/* ============ 11. 交通串联 ============ */
+.transport{padding:1.5rem;border-radius:16px;}
+.tflow{display:flex;flex-direction:row;align-items:stretch;gap:0.6rem;flex-wrap:wrap;}
+.tnode{
+  flex:1;min-width:130px;background:var(--bg);
+  border-radius:12px;padding:0.8rem;
+  text-align:center;font-size:0.85rem;
+}
+.tnode .city{font-weight:700;color:var(--green-dark);display:block;font-size:0.95rem;}
+.tnode .tcost{color:var(--ink-light);font-size:0.78rem;display:block;}
+.tarrow{
+  display:flex;align-items:center;color:var(--green);font-weight:700;font-size:1.4rem;
+}
+/* ============ 12. 抢票技巧 ============ */
+.tips-card{padding:1.5rem;border-radius:16px;}
+.tips-card h3{font-size:1.15rem;margin-bottom:1rem;}
+.tips-card ul{margin-top:1rem;list-style:none;}
+.tips-card li{font-size:0.95rem;padding:0.35rem 0 0.35rem 1.6rem;position:relative;}
+.tips-card li::before{
+  content:"💡";position:absolute;left:0;
+}
+/* ============ 13. Footer ============ */
+footer{
+  background:#f5f7fa;text-align:center;color:#5a5a6e;
+  font-size:0.85rem;padding:2rem 1rem;margin-top:2rem;
+  border-top:1px solid var(--border);
+}
+footer p{margin:0.3rem 0;}
+/* ============ 响应式 ============ */
+@media (max-width:900px){
+  .grid4{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+  section{padding:2rem 1rem;}
+  .hero h1{font-size:1.8rem;}
+  .grid3{grid-template-columns:1fr;}
+  .grid2{grid-template-columns:1fr;}
+  .grid4{grid-template-columns:1fr;}
+  .weather-inner{grid-template-columns:1fr;}
+  .sec-t{font-size:1.35rem;}
+  .card{padding:1rem;}
+  .timeline::before{left:20px;transform:none;}
+  .tl-item{width:100%;padding-left:3rem !important;padding-right:0 !important;}
+  .tl-item:nth-child(odd){padding-right:0 !important;padding-left:3rem !important;}
+  .tl-item .dot{left:13px !important;right:auto !important;}
+  .tflow{flex-direction:column;}
+  .tarrow{justify-content:center;transform:rotate(90deg);}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. 紧急横幅 -->
+<div class="banner">
+  ⏰ 紧急提醒：今天（<span class="d">8.23</span>）务必买返程火车票！黄果树提前7-10天在「安旅通」预约！梵净山门票<span class="d">8月29日</span>早<span class="d">6:30</span>抢第一轮！
+</div>
+
+<main>
+
+<!-- 2. Hero -->
+<div class="hero fade-in">
+  <h1>贵州三天三夜学生党攻略</h1>
+  <div class="sub">黔灵山 · 黄果树瀑布 · 梵净山 | 人均预算约1100元</div>
+  <div class="tags">
+    <span class="tag">🐼 黔灵山免费看熊猫</span>
+    <span class="tag">💦 黄果树学生免门票</span>
+    <span class="tag">🏔️ 梵净山云海金顶</span>
+    <span class="tag">🚄 高铁+顺风车串联</span>
+  </div>
+</div>
+
+<!-- 3. 行程总览 -->
+<section id="timeline">
+  <h2 class="sec-t">📅 四天行程总览</h2>
+  <div class="sec-line"></div>
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="dot"></div>
+      <div class="day-card card" style="border-left-color:#c0392b;">
+        <div class="day-title" style="color:#c0392b;"><span class="bar" style="background:#c0392b;">Day 0</span>🚨 出发前必做</div>
+        <div class="trow"><b>今天</b><span><strong>上12306买返程火车票</strong>：K1077 铜仁→湘潭（9月6日 07:06发车，硬座72元，学生票半价约36元）</span></div>
+        <div class="trow"><b>提醒</b><span>黄果树（9/4）提前7-10天在「安旅通」预约，18岁以上需上传学生证</span></div>
+        <div class="trow"><b>闹钟</b><span><strong>8月29日早6:25进页面</strong>，6:30在「一码游贵州」抢梵净山9月5日门票（首轮2000张最好抢）</span></div>
+        <div class="notice red">⚠️ 梵净山票只在线上放，现场不售票！没抢到立刻等下一轮（提前3天/当天）</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="dot"></div>
+      <div class="day-card card" style="border-left-color:#2d8a5e;">
+        <div class="day-title" style="color:#2d8a5e;"><span class="bar" style="background:#2d8a5e;">Day 1</span>🐼 黔灵山公园（贵阳）</div>
+        <div class="trow"><b>10:30</b><span>酒店（雅斯特·喷水池紫林庵地铁站店）门口集合，稍作休整</span></div>
+        <div class="trow"><b>11:30</b><span>附近吃早午餐（肠旺面/牛肉粉/豆花面），吃饱再爬山</span></div>
+        <div class="trow"><b>11:50</b><span>地铁1号线喷水池→八鸽岩站（2站），C口出步行约10分钟到「东门」</span></div>
+        <div class="trow"><b>12:00</b><span>东门入园（贵客荟小程序预约）→ 步行10分钟 → <strong>熊猫馆</strong>：星宝、海浜（开馆10:00-17:00）</span></div>
+        <div class="trow"><b>13:00</b><span>动物园（猴子超级多，别拿透明袋子！）→ 上坡20-25分钟 → <strong>弘福寺</strong></span></div>
+        <div class="trow"><b>14:00</b><span>弘福寺→黔灵湖（下坡15-20分钟），湖边休息拍照，可划船（手划15元/时）</span></div>
+        <div class="trow"><b>15:30</b><span>黔灵湖→<strong>南门</strong>（平路20-25分钟），16:00左右出园（全程4-5小时）</span></div>
+        <div class="trow"><b>17:00</b><span>回酒店歇脚，充个电</span></div>
+        <div class="trow"><b>18:30</b><span>打车去吃 <strong>「聂记留一手烤鱼」</strong>（贵阳特色烤鱼）</span></div>
+        <div class="trow"><b>21:00</b><span>回雅斯特酒店休息，为明天早起蓄力</span></div>
+        <div class="day-cost">Day 1费用：约150元（早午餐30+烤鱼60+地铁/打车15 + 住宿平摊45/晚）</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="dot"></div>
+      <div class="day-card card" style="border-left-color:#2980b9;">
+        <div class="day-title" style="color:#2980b9;"><span class="bar" style="background:#2980b9;">Day 2</span>💦 黄果树瀑布（贵阳往返）</div>
+        <div class="trow"><b>06:20</b><span>起床退房，<strong>行李寄存酒店前台</strong>（回来还要住）</span></div>
+        <div class="trow"><b>06:45</b><span>打车/地铁直达贵阳北站</span></div>
+        <div class="trow"><b>07:30</b><span>贵阳北→安顺西 高铁（约30分钟，46元）</span></div>
+        <div class="trow"><b>08:05</b><span>安顺西出站，步行3分钟换乘景区大巴（23元，40分钟）</span></div>
+        <div class="trow"><b>09:00</b><span>抵达黄果树游客中心，刷身份证入园（学生0元+观光车50元）</span></div>
+        <div class="trow"><b>09:15</b><span>观光车前往<strong>陡坡塘</strong>，进门往<strong>右边走</strong>：隐藏打卡点「大瀑布上帝视角」！</span></div>
+        <div class="trow"><b>10:00</b><span>坐观光车去<strong>大瀑布</strong>（<strong>上车坐左边</strong>，全程最佳机位）</span></div>
+        <div class="trow"><b>10:30</b><span>大瀑布+<strong>水帘洞</strong>：下行步行不坐扶梯，<strong>上行买半程</strong>；门口2元雨衣必买</span></div>
+        <div class="trow"><b>12:30</b><span>午餐（景区自带干粮更省钱）</span></div>
+        <div class="trow"><b>13:00</b><span>观光车去<strong>天星桥</strong>：别沿正门上去！<strong>左边楼梯上二楼</strong>→看到栅栏<strong>左转</strong>，直入下半段（天星洞、银链坠潭瀑布）</span></div>
+        <div class="trow"><b>15:20</b><span>下半段约1.5-2小时，观光车回游客中心</span></div>
+        <div class="trow"><b>16:30</b><span>大巴返安顺西→高铁回贵阳北（46元）</span></div>
+        <div class="trow"><b>18:00</b><span>回酒店取行李放房间，去吃 <strong>「一烙锅」</strong>（贵阳烙锅，安顺黄果树同款吃法）</span></div>
+        <div class="trow"><b>21:00</b><span>回雅斯特酒店，早点睡（明早6点出发！）</span></div>
+        <div class="day-cost">Day 2费用：约310元（高铁往返92+大巴46+观光车50+扶梯半程约30+雨衣2+烙锅80+打车10）</div>
+        <div class="notice red">💡 黄果树学生免票：全国在校大中小学生（含研究生）免160元门票，只需付50元观光车！18岁以上需在安旅通上传学生证，到窗口核验原件。</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="dot"></div>
+      <div class="day-card card" style="border-left-color:#8e44ad;">
+        <div class="day-title" style="color:#8e44ad;"><span class="bar" style="background:#8e44ad;">Day 3</span>🏔️ 梵净山 → 铜仁</div>
+        <div class="trow"><b>昨晚</b><span><strong>提前一天预约顺风车</strong>（滴滴/哈啰：贵阳→梵净山游客中心，备注"2人有行李"）</span></div>
+        <div class="trow"><b>06:00</b><span>起床退房，酒店门口等顺风车</span></div>
+        <div class="trow"><b>06:15</b><span>顺风车出发：贵阳→梵净山东门（黑湾河游客中心），约3.5-4小时（280km），200元/车（人均100）</span></div>
+        <div class="trow"><b>09:45</b><span>抵达游客中心：买水、休整、整理装备</span></div>
+        <div class="trow"><b>10:00</b><span>入园检票：刷身份证+学生证（免大门票）；买<strong>观光车48元+索道140元=188元</strong>/人</span></div>
+        <div class="trow"><b>10:20</b><span>观光车→索道下站（约20分钟）</span></div>
+        <div class="trow"><b>10:40</b><span>索道上山（15-20分钟，穿越云海）</span></div>
+        <div class="trow"><b>11:00</b><span>索道上站→木栈道徒步（约40分钟，景点都在山顶，彼此不远）</span></div>
+        <div class="trow"><b>11:40</b><span><strong>普渡广场：立刻扫码预约红云金顶！</strong>（山顶很冷，<strong>到了才能预约</strong>等叫号；旺季排队1-2小时很正常，过号作废）</span></div>
+        <div class="trow"><b>12:30</b><span>登顶<strong>红云金顶</strong>（约40分钟，部分路段仅30cm宽，需拉铁链攀爬，海拔2336米俯瞰云海）</span></div>
+        <div class="trow"><b>13:30</b><span>承恩寺（约20分钟）</span></div>
+        <div class="trow"><b>14:00</b><span>蘑菇石（梵净山标志，拍照约30分钟）</span></div>
+        <div class="trow"><b>14:30</b><span>老金顶（可选，往返约40分钟）；<strong>15:00还没到就果断放弃</strong></span></div>
+        <div class="trow"><b>15:00</b><span><strong>必须开始下山！</strong>蘑菇石→索道站约30分钟</span></div>
+        <div class="trow"><b>15:40</b><span>索道下山（15-20分钟）→ 16:00观光车→16:30游客中心</span></div>
+        <div class="trow"><b>16:30</b><span>返程去铜仁：顺风车/拼车50元/人，1-1.5小时；<strong>提前1小时预约，17:00后难约车</strong>！</span></div>
+        <div class="trow"><b>18:00</b><span>抵达铜仁，入住<strong>火车站附近酒店</strong>（明早步行5分钟到站）</span></div>
+        <div class="trow"><b>19:00</b><span>铜仁古城/中南门 + 锦江夜景；必吃：酸汤鱼、米豆腐、锅巴粉</span></div>
+        <div class="trow"><b>21:00</b><span>回酒店休息，定好明天5:30闹钟</span></div>
+        <div class="day-cost">Day 3费用：约470元（顺风车100+观光车48+索道140+拼车50+住宿60+餐饮100+山上补给20）</div>
+        <div class="notice red">⚠️ 铜仁南站≠铜仁站！铜仁南站在玉屏县大龙镇，距市区约50公里。我们住市区铜仁站附近，坐K1077从铜仁站出发，步行即可，不需要赶去南站！</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="dot"></div>
+      <div class="day-card card" style="border-left-color:#5a5a6e;">
+        <div class="day-title" style="color:#5a5a6e;"><span class="bar" style="background:#5a5a6e;">Day 4</span>🚄 返程：铜仁 → 湘潭</div>
+        <div class="trow"><b>05:30</b><span>起床退房</span></div>
+        <div class="trow"><b>05:40</b><span>步行到铜仁站（5-10分钟）</span></div>
+        <div class="trow"><b>06:00</b><span>到火车站，买早餐/自带干粮</span></div>
+        <div class="trow"><b>07:06</b><span><strong>K1077 铜仁→湘潭</strong>（硬座72元，约7小时34分钟；备选K406 07:16发车 14:48到）</span></div>
+        <div class="trow"><b>14:40</b><span>抵达湘潭站，安全返校！🎉</span></div>
+        <div class="day-cost">Day 4费用：约82元（火车72+早餐10；学生票半价仅36元！）</div>
+        <div class="notice">💡 总预算：人均约1100元（含三晚住宿+四天餐饮+全部交通），丰俭由人，拼房/自带干粮还能再省。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 4. 费用总览 -->
+<section id="cost">
+  <h2 class="sec-t">💰 三天三夜费用总览</h2>
+  <div class="sec-line"></div>
+  <div class="card" style="overflow:hidden;padding:0;">
+    <table>
+      <thead>
+        <tr><th>项目</th><th>原价</th><th>学生价</th><th>备注</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1. 黔灵山门票</td><td>免费</td><td class="price-free">免费</td><td>贵客荟小程序实名预约，节假限制人流</td></tr>
+        <tr><td>2. 黔灵山索道（可选）</td><td>30元</td><td>30元</td><td>上行20/下行15，本路线从东门进用不上</td></tr>
+        <tr><td>3. 黄果树大门票</td><td>160元</td><td class="price-free"><strong>0元</strong></td><td>学生免票，安旅通上传学生证</td></tr>
+        <tr><td>4. 黄果树观光车</td><td>50元</td><td>50元</td><td>必购，三大景区循环车</td></tr>
+        <tr><td>5. 大瀑布扶梯（上行半程）</td><td>30元</td><td>30元</td><td>下行步行不用坐，上行买半程即可</td></tr>
+        <tr><td>6. 贵阳北↔安顺西高铁</td><td>92元</td><td>92元</td><td>往返二等座，约30分钟</td></tr>
+        <tr><td>7. 安顺西↔黄果树大巴</td><td>46元</td><td>46元</td><td>往返，单程23元约40分钟</td></tr>
+        <tr><td>8. 梵净山大门票</td><td>100元</td><td class="price-free"><strong>0元</strong></td><td>学生免票，提前7天抢</td></tr>
+        <tr><td>9. 梵净山观光车</td><td>48元</td><td>48元</td><td>往返，索道下站接驳</td></tr>
+        <tr><td>10. 梵净山索道往返</td><td>140元</td><td>140元</td><td>建议购买，徒步上山需3-4小时</td></tr>
+        <tr><td>11. 贵阳→梵净山顺风车</td><td>200元/车</td><td><strong>100元</strong>/人</td><td>2人拼车平摊，约3.5-4小时</td></tr>
+        <tr><td>12. 梵净山→铜仁拼车</td><td>50元</td><td>50元</td><td>提前1小时预约，17点后难约</td></tr>
+        <tr><td>13. 铜仁→湘潭 K1077</td><td>72元</td><td class="price-free"><strong>36元</strong></td><td>学生票半价！07:06发车，硬座</td></tr>
+        <tr class="total-row"><td>💵 全程总预算（人均）</td><td colspan="2">约1100元</td><td>含3晚住宿+4天餐饮+全部交通，拼车/自带干粮可压到950元</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 5. 返程火车班次 -->
+<section id="train">
+  <h2 class="sec-t">🚄 9月6日 铜仁→湘潭 返程班次</h2>
+  <div class="sec-line"></div>
+  <div class="card tbl-wrap" style="overflow:hidden;padding:0;">
+    <table>
+      <thead class="dark">
+        <tr><th>车次</th><th>发车</th><th>到达</th><th>耗时</th><th>票价</th><th>推荐</th></tr>
+      </thead>
+      <tbody>
+        <tr class="best-row">
+          <td><strong>K1077</strong></td><td>07:06</td><td>14:40</td><td>7小时34分</td><td>72元</td><td>⭐⭐⭐ 首选！铜仁站发车，就在市区</td>
+        </tr>
+        <tr><td>K406</td><td>07:16</td><td>14:48</td><td>7小时32分</td><td>72元</td><td>⭐⭐ 备选，跟着K1077一起抢</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:0.8rem;font-size:0.85rem;color:var(--ink-light);">📍 铜仁站位于铜仁市碧江区，就在市区内！酒店步行5-10分钟可达，不用赶车。12306预售期15天，9月6日车票8月22日起售——<strong>今天记得下单，学生票勾选"学生优惠"直接半价36元！</strong></p>
+</section>
+
+<!-- 6. 三大景点预约攻略 -->
+<section id="booking">
+  <h2 class="sec-t">🎫 三大景点预约攻略（千万别搞混！）</h2>
+  <div class="sec-line"></div>
+  <div class="grid3">
+
+    <div class="card book-card" style="border-top-color:#2d8a5e;">
+      <h3>🐼 黔灵山公园</h3>
+      <p><b>渠道：</b>「黔灵山公园」公众号 或 <strong>「贵客荟」小程序</strong></p>
+      <p><b>价格：</b><span class="price-free">免费</span></p>
+      <p><b>预约时间：</b>提前1-7天</p>
+      <p><b>必带：</b>身份证</p>
+      <p><b>提示：</b>2026年5月1日起渠道改为贵客荟，原美团预约停用；节假期限流</p>
+    </div>
+
+    <div class="card book-card" style="border-top-color:#2980b9;">
+      <h3>💦 黄果树瀑布</h3>
+      <p><b>渠道：</b>「安旅通」小程序</p>
+      <p><b>价格：</b>学生免160元门票，付50元观光车</p>
+      <p><b>预约时间：</b>提前1-15天（建议提前7-10天）</p>
+      <p><b>必带：</b>身份证 + <strong>学生证原件</strong>（18岁以上需窗口核验）</p>
+      <p><b>提示：</b>水帘洞每日限流1.2万人，购票后<strong>需在安旅通单独预约</strong>！</p>
+      <p class="hot-red">学生必带学生证原件！</p>
+    </div>
+
+    <div class="card book-card" style="border-top-color:#8e44ad;">
+      <h3>🏔️ 梵净山</h3>
+      <p><b>渠道：</b>「一码游贵州」小程序 或 「梵净山旅游区」公众号</p>
+      <p><b>价格：</b>免门票，付48元观光车+140元索道</p>
+      <p><b>预约时间：</b>提前7天，<strong>早上6:30放票</strong></p>
+      <p><b>放票轮次：</b>提前7天（2000张/较容易）、提前3天（3000张/中等）、当天（800张/极难）</p>
+      <p><b>必带：</b>身份证+学生证</p>
+      <p><b>提示：</b>红云金顶<strong>不能线上预约</strong>，到了普渡广场立刻扫码取号！</p>
+      <p class="hot-red">8月29日早6:30抢9月5日票！</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 7. 景区内路线 -->
+<section id="route">
+  <h2 class="sec-t">🗺️ 三大景区游玩路线</h2>
+  <div class="sec-line"></div>
+
+  <div class="card route-card">
+    <h3 style="color:#2d8a5e;">🐼 黔灵山路线（东门进南门出）</h3>
+    <p class="route-sub">约4-5小时 | 全程步行约70分钟+休息拍照，熊猫馆10:00开馆要注意节奏</p>
+    <ol class="steps">
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">东门</div>
+          <div>
+            <span class="nlabel">公园东门（地铁1号线八鸽岩站C口）</span>
+            <span class="ncost">（免费，贵客荟预约）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">熊猫</div>
+          <div>
+            <span class="nlabel">熊猫馆：星宝 / 海浜</span>
+            <span class="ncost">（步行10分钟，免费）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">动物园</div>
+          <div>
+            <span class="nlabel">动物园（灵长类、百鸟园，猴子多！）</span>
+            <span class="ncost">（免费）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">弘福寺</div>
+          <div>
+            <span class="nlabel">弘福寺</span>
+            <span class="ncost">（上坡20-25分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">黔灵湖</div>
+          <div>
+            <span class="nlabel">黔灵湖（可划船，手划15元/时）</span>
+            <span class="ncost">（下坡15-20分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2d8a5e;">南门</div>
+          <div>
+            <span class="nlabel">南门出园</span>
+            <span class="ncost">（平路20-25分钟）</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="route-tags"><span>免费</span><span>4-5小时</span><span>地铁1号线直达东门</span></div>
+  </div>
+
+  <div class="card route-card">
+    <h3 style="color:#2980b9;">💦 黄果树路线（陡坡塘先玩，逆人流）</h3>
+    <p class="route-sub">约6小时 | 顺序：陡坡塘→大瀑布→天星桥下半段，上午人少光线好</p>
+    <ol class="steps">
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2980b9;">游客中心</div>
+          <div>
+            <span class="nlabel">黄果树游客中心，刷身份证入园</span>
+            <span class="ncost">（学生0元+观光车50元）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2980b9;">陡坡塘</div>
+          <div>
+            <span class="nlabel">陡坡塘：进门往右走，隐藏打卡点「大瀑布上帝视角」</span>
+            <span class="ncost">（免费，约30分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2980b9;">大瀑布</div>
+          <div>
+            <span class="nlabel">大瀑布+水帘洞：观光车坐左边！下行步行，上行半程扶梯</span>
+            <span class="ncost">（雨衣2元+扶梯约30元，约2小时）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2980b9;">天星桥</div>
+          <div>
+            <span class="nlabel">天星桥下半段：左边楼梯上二楼→栅栏左转，直奔天星洞、银链坠潭</span>
+            <span class="ncost">（1.5-2小时，上半程无景点别去）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#2980b9;">回程</div>
+          <div>
+            <span class="nlabel">大巴回游客中心→安顺西→贵阳北</span>
+            <span class="ncost">（大巴23元+高铁46元）</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="route-tags"><span>学生免票</span><span>5-6小时</span><span>水帘洞需单独预约</span></div>
+  </div>
+
+  <div class="card route-card">
+    <h3 style="color:#8e44ad;">🏔️ 梵净山路线（东门索道经典线）</h3>
+    <p class="route-sub">约6小时 | 核心：普渡广场扫码约号红云金顶，15:00必须下山</p>
+    <ol class="steps">
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#8e44ad;">东门</div>
+          <div>
+            <span class="nlabel">黑湾河游客中心，刷证入园</span>
+            <span class="ncost">（学生0元，观光车48+索道140）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#8e44ad;">观光车</div>
+          <div>
+            <span class="nlabel">观光车→索道下站</span>
+            <span class="ncost">（约20分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#8e44ad;">索道</div>
+          <div>
+            <span class="nlabel">索道上山，穿越云海</span>
+            <span class="ncost">（约15-20分钟+木栈道40分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#c0392b;">扫码!</div>
+          <div>
+            <span class="nlabel">普渡广场：立刻扫红云金顶登山号（山顶很冷，到了才能约）</span>
+            <span class="ncost">（旺季排队1-2小时，过号作废）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#8e44ad;">金顶</div>
+          <div>
+            <span class="nlabel">红云金顶（拉铁链攀爬）→承恩寺→蘑菇石→老金顶（可选）</span>
+            <span class="ncost">（约40分钟）</span>
+          </div>
+        </div>
+        <span class="arrow">↓</span>
+      </li>
+      <li>
+        <div class="node">
+          <div class="circ" style="background:#e67e22;">15:00</div>
+          <div>
+            <span class="nlabel">必须开始下山！索道下行（末班17:00）→ 观光车→游客中心</span>
+            <span class="ncost">（拼车50元→铜仁，1.5小时）</span>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="route-tags"><span>免门票</span><span>索道140</span><span>末班17:00</span><span>山顶10-18℃</span></div>
+  </div>
+
+</section>
+
+<!-- 8. 避坑指南 -->
+<section id="pitfalls">
+  <h2 class="sec-t">⚠️ 避坑指南（血泪教训）</h2>
+  <div class="sec-line"></div>
+  <div class="grid2">
+
+    <div class="card pit red">
+      <h4>🚫 1. 没预约门票就出发</h4>
+      <p>黔灵山限流、黄果树现场不卖散客票、梵净山每日限流9000人，全部实名预约，没约=白跑。</p>
+    </div>
+    <div class="card pit red">
+      <h4>🚫 2. 跑错梵净山山门</h4>
+      <p>东门（江口）和西门（印江）相隔80公里，门票不通用，只有东门有索道。导航认准"黑湾河游客中心"。</p>
+    </div>
+    <div class="card pit red">
+      <h4>🚫 3. 黄果树水帘洞没单独预约</h4>
+      <p>每日限流1.2万人，购票后需在「安旅通」额外预约水帘洞时段，否则白来一趟。</p>
+    </div>
+    <div class="card pit red">
+      <h4>🚫 4. 错过梵净山末班索道</h4>
+      <p>下行末班约17:00，错过只能徒步下山3-4小时，15:00必须开始下山。</p>
+    </div>
+
+    <div class="card pit orange">
+      <h4>⚡ 5. 混淆铜仁站/铜仁南站</h4>
+      <p>铜仁南站在玉屏县大龙镇，距市区约50公里！我们坐K1077从市区<strong>铜仁站</strong>发车，住火车站附近步行5分钟，千万别跑错。</p>
+    </div>
+    <div class="card pit orange">
+      <h4>⚡ 6. 穿太少上梵净山</h4>
+      <p>山顶10-18℃大风，红云金顶体感更冷。防风外套+雨衣，别带伞（山顶风大危险）。</p>
+    </div>
+    <div class="card pit orange">
+      <h4>⚡ 7. 黄果树学生没带学生证原件</h4>
+      <p>18岁以上学生需在窗口核验原件，电子版/照片都不行！没证只能补160元门票。</p>
+    </div>
+
+    <div class="card pit green">
+      <h4>✅ 8. 黄果树逆人流顺序</h4>
+      <p>陡坡塘→大瀑布→天星桥，9点第一波入园，大瀑布上午拍照人少、还能看到彩虹。</p>
+    </div>
+    <div class="card pit green">
+      <h4>✅ 9. 拒绝代抢票骗局</h4>
+      <p>任何收费代约都是坑，官方渠道只有安旅通/一码游贵州/贵客荟，自己动手最稳。</p>
+    </div>
+    <div class="card pit green">
+      <h4>✅ 10. 行程排满不休息</h4>
+      <p>黄果树和梵净山都是体力活，Day 2晚上必须回酒店好好休息，Day 3才爬得动。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- 9. 天气与穿衣 -->
+<section id="weather">
+  <h2 class="sec-t">🌤️ 9月天气 &amp; 穿衣指南</h2>
+  <div class="sec-line"></div>
+  <div class="weather-card">
+    <div class="weather-inner">
+      <div class="w-item">
+        <span class="name">贵阳 / 黔灵山</span>
+        <div class="temp">25-30℃</div>
+        <p>短袖即可，早晚微凉</p>
+      </div>
+      <div class="w-item">
+        <span class="name">黄果树</span>
+        <div class="temp">22-28℃</div>
+        <p>短袖+防晒衣，水帘洞会湿身带雨衣</p>
+      </div>
+      <div class="w-item">
+        <span class="name">梵净山顶</span>
+        <div class="temp">10-18℃</div>
+        <p>必须带防风外套/薄冲锋衣</p>
+      </div>
+    </div>
+    <p style="margin-top:1rem;font-size:0.9rem;color:#1565c0;">💡 9月是贵州最佳旅游季节！秋高气爽，降雨减少。但梵净山顶风大湿冷，黄果树水帘洞会淋湿，务必带雨衣别带伞（山顶风大危险）！</p>
+  </div>
+</section>
+
+<!-- 10. 装备清单 -->
+<section id="pack">
+  <h2 class="sec-t">🎒 三天装备清单</h2>
+  <div class="sec-line"></div>
+  <div class="grid4">
+    <div class="card pack">
+      <h4>📇 证件类（必带）</h4>
+      <ul>
+        <li class="must">身份证（检票/乘车）</li>
+        <li class="must">学生证原件（黄果树必须！）</li>
+        <li>火车票截图/电子票</li>
+        <li>少量现金（山上信号弱）</li>
+      </ul>
+    </div>
+    <div class="card pack">
+      <h4>👕 衣物类</h4>
+      <ul>
+        <li>短袖（贵阳）</li>
+        <li class="must">防风外套/薄冲锋衣（梵净山）</li>
+        <li>长袖速干衣</li>
+        <li>防滑运动鞋（拉铁链必备！）</li>
+        <li>帽子</li>
+      </ul>
+    </div>
+    <div class="card pack">
+      <h4>🍫 食物补给</h4>
+      <ul>
+        <li>矿泉水（2瓶/人）</li>
+        <li>巧克力/能量棒</li>
+        <li>面包饼干（景区贵，自备干粮）</li>
+        <li>少量水果</li>
+      </ul>
+    </div>
+    <div class="card pack">
+      <h4>🔧 其他装备</h4>
+      <ul>
+        <li class="must">雨衣（别带伞！）</li>
+        <li>手机防水袋（水帘洞）</li>
+        <li>充电宝</li>
+        <li>防晒霜+墨镜</li>
+        <li>手套（红云金顶铁链）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 11. 交通串联 -->
+<section id="transport">
+  <h2 class="sec-t">🚗 交通串联总览</h2>
+  <div class="sec-line"></div>
+  <div class="card transport">
+    <div class="tflow">
+      <div class="tnode">
+        <span class="city">🏨 贵阳</span>
+        <span class="tcost">雅斯特·喷水池（宿2晚）</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🚄 安顺西</span>
+        <span class="tcost">高铁46元 · 30分钟</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">💦 黄果树</span>
+        <span class="tcost">大巴23元 · 40分钟</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🏨 贵阳（返）</span>
+        <span class="tcost">高铁46元 · 30分钟</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🚗 顺风车</span>
+        <span class="tcost">人均100元 · 3.5-4小时</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🏔️ 梵净山</span>
+        <span class="tcost">观光车48+索道140</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🚗 拼车</span>
+        <span class="tcost">50元 · 1-1.5小时</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🏨 铜仁</span>
+        <span class="tcost">火车站附近（宿1晚）</span>
+      </div>
+      <div class="tarrow">→</div>
+      <div class="tnode">
+        <span class="city">🚂 湘潭</span>
+        <span class="tcost">K1077 · 72元（学生36）</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. 抢票技巧 -->
+<section id="tips">
+  <h2 class="sec-t">⏰ 抢票技巧 &amp; 关键时间点</h2>
+  <div class="sec-line"></div>
+  <div class="card tips-card">
+    <h3>📆 关键时间点</h3>
+    <div class="card tbl-wrap" style="overflow:hidden;padding:0;box-shadow:none;border:1px solid var(--border);">
+      <table>
+        <thead>
+          <tr><th>景点</th><th>抢票时间</th><th>备注</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>黄果树</td><td>提前7-10天，随时</td><td>安旅通小程序，学生免门票</td></tr>
+          <tr><td>梵净山</td><td>8月29日早6:30</td><td>一码游贵州，首轮2000张最好抢</td></tr>
+          <tr><td>黔灵山</td><td>提前1-7天</td><td>免费，节假日限流</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:1.2rem;">💡 抢票技巧</h3>
+    <ul>
+      <li>提前在所有小程序填好游客信息（姓名+身份证号）</li>
+      <li>梵净山定闹钟6:25进入页面，6:30准时提交</li>
+      <li>黄果树学生票需在安旅通上传学生证照片，到窗口核验原件</li>
+      <li>支付时限内完成付款，超时订单自动释放</li>
+      <li>如果首轮没抢到，立刻等下一轮放票</li>
+      <li>选最早入园时段（7:00-9:00），人少景美</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- 13. Footer -->
+<footer>
+  <p>攻略整理于2026年8月23日 | 信息综合自官方公告与网络攻略</p>
+  <p>具体以景区当日公告为准，祝你们玩得开心，安全返校！🎉</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  /* 区块淡入上滑 */
+  var faders=document.querySelectorAll('.fade-in,section,.hero');
+  var items=document.querySelectorAll('.tl-item');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}
+    });
+  },{threshold:0.12});
+  Array.prototype.forEach.call(faders,function(el){io.observe(el);});
+  /* 时间线依次延迟出现 */
+  items.forEach(function(el,i){
+    el.style.transitionDelay=(i*0.1)+'s';
+  });
+  items.forEach(function(el){io.observe(el);});
+});
+</script>
+</body>
+</html>
